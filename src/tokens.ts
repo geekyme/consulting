@@ -24,11 +24,3 @@ export const display = (size: number | string): CSSProperties => ({
   letterSpacing: "-0.025em",
   fontSize: size,
 });
-
-export const wrap = (m: boolean): CSSProperties => ({
-  maxWidth: 1100,
-  margin: "0 auto",
-  padding: `0 ${m ? 22 : 40}px`,
-});
-
-export const secPad = (m: boolean) => (m ? "56px 0" : "92px 0");

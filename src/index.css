@@ -11,4 +11,185 @@ html, body, #root {
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: var(--body-f);
+}
+
+/* ─── Responsive tokens ─────────────────────────────────── */
+:root {
+  --body-f: 17px;
+  --pad-x: 40px;
+  --sec-y: 92px 0;
+
+  /* Hero */
+  --hero-pt: 34px;
+  --hero-pb: 80px;
+  --hero-nav-pb: 64px;
+  --hero-name-f: 28px;
+  --hero-h1-f: clamp(54px, 7vw, 88px);
+  --hero-sub-f: 23px;
+  --hero-sub-mt: 28px;
+  --device-mt: 44px;
+  --device-pad: 26px 28px;
+  --device-q-f: 16.5px;
+  --device-ft-f: 12.5px;
+  --cta-mt: 40px;
+  --cta-gap: 24px;
+
+  /* Shared */
+  --h2-f: 46px;
+
+  /* Who */
+  --who-gap: 24px;
+  --who-mt: 44px;
+  --who-card-p: 34px 30px;
+  --who-h3-f: 28px;
+  --who-p-f: 17px;
+
+  /* How */
+  --how-p-f: 18px;
+  --how-tl-mt: 58px;
+  --how-tl-pl: 38px;
+  --how-line-l: 11px;
+  --how-item-pb: 44px;
+  --how-dot-l: -38px;
+  --how-h3-f: 27px;
+  --how-body-f: 17px;
+
+  /* Track Record */
+  --tr-stats-gap: 32px 36px;
+  --tr-stats-mt: 48px;
+  --tr-n-f: 44px;
+  --tr-d-f: 15px;
+  --tr-dom-mt: 60px;
+  --tr-dom-f: 13px;
+  --tr-reg-gap: 24px;
+  --tr-reg-mt: 34px;
+  --tr-reg-p-f: 17px;
+
+  /* Engagement */
+  --eng-gap: 40px;
+  --eng-mt: 48px;
+  --eng-card-p: 38px 34px;
+  --eng-pr-f: 64px;
+  --eng-usd-f: 18px;
+  --eng-h3-f: 28px;
+  --eng-li-f: 17px;
+
+  /* Contact */
+  --con-y: 96px 0 104px;
+  --con-h2-f: 56px;
+}
+
+@media (max-width: 759px) {
+  :root {
+    --body-f: 16px;
+    --pad-x: 22px;
+    --sec-y: 56px 0;
+
+    --hero-pt: 26px;
+    --hero-pb: 50px;
+    --hero-nav-pb: 40px;
+    --hero-name-f: 24px;
+    --hero-h1-f: 44px;
+    --hero-sub-f: 19px;
+    --hero-sub-mt: 22px;
+    --device-mt: 34px;
+    --device-pad: 20px 18px;
+    --device-q-f: 15px;
+    --device-ft-f: 12px;
+    --cta-mt: 32px;
+    --cta-gap: 16px;
+
+    --h2-f: 32px;
+
+    --who-gap: 16px;
+    --who-mt: 30px;
+    --who-card-p: 26px 22px;
+    --who-h3-f: 24px;
+    --who-p-f: 16px;
+
+    --how-p-f: 16px;
+    --how-tl-mt: 42px;
+    --how-tl-pl: 30px;
+    --how-line-l: 9px;
+    --how-item-pb: 36px;
+    --how-dot-l: -30px;
+    --how-h3-f: 23px;
+    --how-body-f: 16px;
+
+    --tr-stats-gap: 26px 20px;
+    --tr-stats-mt: 34px;
+    --tr-n-f: 34px;
+    --tr-d-f: 14px;
+    --tr-dom-mt: 44px;
+    --tr-dom-f: 12px;
+    --tr-reg-gap: 10px;
+    --tr-reg-mt: 28px;
+    --tr-reg-p-f: 16px;
+
+    --eng-gap: 24px;
+    --eng-mt: 32px;
+    --eng-card-p: 28px 24px;
+    --eng-pr-f: 50px;
+    --eng-usd-f: 16px;
+    --eng-h3-f: 24px;
+    --eng-li-f: 16px;
+
+    --con-y: 60px 0 64px;
+    --con-h2-f: 36px;
+  }
+}
+
+/* ─── Layout ─────────────────────────────────────────────── */
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 var(--pad-x);
+}
+
+/* ─── Responsive grids & flex ────────────────────────────── */
+.grid-who {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--who-gap);
+  margin-top: var(--who-mt);
+}
+
+.grid-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--tr-stats-gap);
+  margin-top: var(--tr-stats-mt);
+}
+
+.grid-engage {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) 1fr;
+  gap: var(--eng-gap);
+  margin-top: var(--eng-mt);
+  align-items: start;
+}
+
+.grid-regulatory {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: var(--tr-reg-gap);
+  align-items: start;
+  margin-top: var(--tr-reg-mt);
+}
+
+.cta-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--cta-gap);
+  margin-top: var(--cta-mt);
+}
+
+@media (max-width: 759px) {
+  .grid-who        { grid-template-columns: 1fr; }
+  .grid-stats      { grid-template-columns: 1fr 1fr; }
+  .grid-engage     { grid-template-columns: 1fr; }
+  .grid-regulatory { grid-template-columns: 1fr; }
+  .cta-row         { flex-direction: column; align-items: stretch; }
 }

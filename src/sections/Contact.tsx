@@ -1,16 +1,16 @@
 import { useState } from "react";
-import { C, sans, mono, display, wrap } from "../tokens";
+import { C, sans, mono, display } from "../tokens";
 import { META } from "../content";
 import { Eyebrow } from "../ui/Eyebrow";
 
-export function Contact({ m }: { m: boolean }) {
+export function Contact() {
   const [hover, setHover] = useState(false);
 
   return (
-    <section style={{ padding: m ? "60px 0 64px" : "96px 0 104px", textAlign: "center" }}>
-      <div style={wrap(m)}>
+    <section style={{ padding: "var(--con-y)", textAlign: "center" }}>
+      <div className="wrap">
         <Eyebrow mb={16}>Get in touch</Eyebrow>
-        <h2 style={{ ...display(m ? 36 : 56), maxWidth: "16ch", margin: "0 auto 30px" }}>
+        <h2 style={{ ...display("var(--con-h2-f)"), maxWidth: "16ch", margin: "0 auto 30px" }}>
           Tell me the decision you're stuck on.
         </h2>
 

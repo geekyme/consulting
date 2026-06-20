@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { C, sans } from "./tokens";
-import { useMobile } from "./hooks/useMobile";
 import { Hero } from "./sections/Hero";
 import { Who } from "./sections/Who";
 import { How } from "./sections/How";
@@ -9,8 +8,6 @@ import { Engagement } from "./sections/Engagement";
 import { Contact } from "./sections/Contact";
 
 export default function Page() {
-  const m = useMobile();
-
   useEffect(() => {
     const id = "shawn-fonts";
     if (!document.getElementById(id)) {
@@ -23,13 +20,13 @@ export default function Page() {
   }, []);
 
   return (
-    <div style={{ background: C.paper, color: C.ink, fontFamily: sans, fontSize: m ? 16 : 17, lineHeight: 1.6, width: "100%", overflowX: "hidden" }}>
-      <Hero m={m} />
-      <Who m={m} />
-      <How m={m} />
-      <TrackRecord m={m} />
-      <Engagement m={m} />
-      <Contact m={m} />
+    <div style={{ background: C.paper, color: C.ink, fontFamily: sans, lineHeight: 1.6, width: "100%", overflowX: "hidden" }}>
+      <Hero />
+      <Who />
+      <How />
+      <TrackRecord />
+      <Engagement />
+      <Contact />
     </div>
   );
 }
