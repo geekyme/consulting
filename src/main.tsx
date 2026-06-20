@@ -4,4 +4,5 @@ import App from "./App";
 
 export const createRoot = ViteReactSSG({
   routes: [{ path: "/", element: <App /> }],
+  basename: import.meta.env.BASE_URL,
 });
